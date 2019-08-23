@@ -1,15 +1,16 @@
 var screen = document.querySelector("#containerOne");
-var image = document.querySelector("#dogImage");
+var box = document.querySelector("#myElement");
 
-var START_X = Math.round((screen.offsetWidth - image.offsetWidth) / 2);
-var START_Y = Math.round((screen.offsetHeight - image.offsetHeight) / 2);
+var START_X = Math.round((screen.offsetWidth - box.offsetWidth) / 2);
+var START_Y = Math.round((screen.offsetHeight - box.offsetHeight) / 2);
 
-var mc = new Hammer.Manager(image);
+var mc = new Hammer.Manager(box);
 
-var pinch = new Hammer.Pinch(); 
+var Press = new Hammer.Press();
+var Tap = new Hammer.Tap(); 
 
-mc.add(pinch);
+mc.add([Tap,Press]);
 
-mc.on("pinch", function() {
-    console.log("detected");
+mc.on("panleft panright tap press", function(ev) {
+    myElement.textContent = ev.type +" gesture detected.";
 });
