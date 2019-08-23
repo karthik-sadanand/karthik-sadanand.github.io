@@ -1,0 +1,22 @@
+body{
+    background-color : white;
+}
+
+.containerOne{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageHolder{
+    width : 80%;
+    height : 500px;
+    background-color: black;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dogImage{
+    width : 30%;
+}
