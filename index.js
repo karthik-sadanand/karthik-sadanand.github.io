@@ -8,9 +8,10 @@ var mc = new Hammer.Manager(box);
 
 var Press = new Hammer.Press();
 var Tap = new Hammer.Tap(); 
+var Pinch = new Hammer.Pinch();
 
-mc.add([Tap,Press]);
+mc.add([Tap,Press,Pinch]);
 
-mc.on("panleft panright tap press", function(ev) {
+mc.on("panleft panright tap press pinch", function(ev) {
     myElement.textContent = ev.type +" gesture detected.";
 });
